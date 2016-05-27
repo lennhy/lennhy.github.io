@@ -1,0 +1,21 @@
+# Site settings
+title: Dev and Design
+header-img: img/home-bg.png
+email: lennhydesign@gmail.com
+copyright_name: lennhy
+description: > # this means to ignore newlines until "baseurl:"
+  Software / UX / UI
+baseurl: "" # the subpath of your site, e.g. /blog
+twitter_username: https://twitter.com/lennpenny
+github_username:  lennhy
+learn_profile: lennhy
+email_username: lennhydesign@gmail.com
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+paginate: 5
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
+
+gems: [jekyll-paginate, jekyll-feed]
