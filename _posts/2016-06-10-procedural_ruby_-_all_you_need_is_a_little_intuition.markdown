@@ -4,7 +4,7 @@ title:  "Procedural Ruby - all you need is a little intuition. "
 date:   2016-06-10 00:54:09 -0400
 ---
 
-![https://s-media-cache-ak0.pinimg.com/600x315/77/d1/c2/77d1c2853c52f352cb637713df0aaf48.jpg](http://)
+![https://s-media-cache-ak0.pinimg.com/600x315/77/d1/c2/77d1c2853c52f352cb637713df0aaf48.jpg]
 After getting my hands wet with procedural ruby I encountered problems that required more than just knowledge but more so intuition. The kind of intuition that involved using the knowledge I had and applying it in a less obvious and almost more counterintuitive way. This became clear to me after spending hours on a single problem that I would have solved faster if I knew how to use placeholder values to switch and change around variables to my liking. 
 
 When you want to return a value that you put into a method a named placeholder allows you to change those values without hard coding it. It may not seem so but this is a very useful and powerful tool. 
