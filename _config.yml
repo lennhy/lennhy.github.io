@@ -1,10 +1,10 @@
 # Site settings
-title: Dev and Design
+title: Notes from a Creative / Software Developer
 header-img: img/home-bg.png
 email: lennhydesign@gmail.com
 copyright_name: lennhy
 description: > # this means to ignore newlines until "baseurl:"
-  Software / UX / UI
+  Software Engineering / UX / UI Design
 baseurl: "" # the subpath of your site, e.g. /blog
 twitter_username: https://twitter.com/lennpenny
 github_username:  lennhy
