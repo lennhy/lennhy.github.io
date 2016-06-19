@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "From Visual Designer to learning software development "
+title:  "From Visual Designer to Software Developer"
 date:   2016-05-27 16:58:34 -0400
 ---
 
