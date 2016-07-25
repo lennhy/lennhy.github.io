@@ -11,8 +11,8 @@ Apart from drawing parallels with the busy hustle and bustle of life in New York
 Like an Object Class, New York City has various attributes and methods that are part of the city streets. Taxis (Class Methods) transport passengers, bicycle couriers (Instance Methods) deliver food and messages to customers, and Sports cars (Object Instances) well, they pop out of nowhere!  
 
 Just a reminder:
-Class: are like the streets and highways of New York City. 
-Objects Instances: are like the sports cars that speed into the streets of the city.
+Classes: are like the streets and highways of New York City. 
+Objects Instances: are like the sports cars that pop out of nowhere and speed into the streets of the city.
 Instance Methods: are like bicycle messengers, they have a very specific message to deliver through the city.
 Class methods: are like Yellow cab Taxi Drivers they never go outside of the city.
 
@@ -20,7 +20,7 @@ Class methods: are like Yellow cab Taxi Drivers they never go outside of the cit
 Object Instances:
 There was a day when I had to deliver my last package with 3% left of my phone’s battery life and 5 miles to cover on my 27 speed bicycle. But more about that later. Near the end of my delivery as I was about to park my bicycle and I heard a sudden roaring sound. I turned and saw what I believe to be a very expensive sports car the kind you only see in movies like the Fast and the Furious, the one’s that you can never remember the name of but look familiar because you probably saw them in a movie. In it were to young guys yelling at something behind them. When I turned to see what they were yelling at, out of nowhere comes six other sports cars all with young guys probably in their twenties slowing to an almost dead stop. In that moment the first car sped off and the other cars followed like a race they were there and then gone in an Instance. 
 Instances or Object Instances are like Sports cars: They pop out of nowhere and get instantiated at an instance notice speeding into existence. There only purpose is to be instantiated. We can’t do much with it but race against other instances to see who gets instantiated first. Or until a message is sent to them by an instance Method. Look at the example below:
-Lets start off with an illustration of a class in Figure 1:
+Lets start off with an illustration of a class in *Figure 1* below:
 
 *Figure 1.*
 ```
@@ -54,6 +54,7 @@ class Song
 
 end
 ```
+
 
 This is how we instantiate or create an instance of the object(sports car) from nothing or out of no where.
 
