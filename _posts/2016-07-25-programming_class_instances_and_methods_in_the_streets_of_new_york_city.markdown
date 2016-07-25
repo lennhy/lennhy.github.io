@@ -26,32 +26,29 @@ Lets start off with an illustration of a class in *Figure 1* below:
 ```
 class Song
   attr_accessor :name
-  @@all =[]
-    
+  @@all =[]  
   def initialize(name)
     @name = name
     @@all << self
   end
-    
   def statement
     puts “The name of this song is #{name}.”
+    self
+  end 
+  def genre(value)
+    self
   end
-    
   def self.create(song)
     song = Song.new(name)
     song.save
     song
-  end
-    
+  end 
   def self.all
     @@all
-  end
-    
+  end 
   def save
     self.class.all << self
   end
-
-
 end
 ```
 
@@ -81,8 +78,17 @@ Song.all
 ```
 In *Figure 2* the "Song" is the class. Usually class names are capitalized so that it is easy to recognize it from an instance method. Unlike in Figure 1.3 where the instance method name "song" is in lower case.
 
-And that is all there is to it. 
+And that is all there is to it. Returning to my phone being almost dead; along my way to the customer's address I met other bicycle couriers (instance methods). After I sped past one of them, 15 secs later i was over taken by one of them. He said "you have to build your stamina." Like this instance methods can also communicate with each other by chaining. 
+*In Figure *3 is an example of chaining.
 
+*Figure 3*
+```
+song.statement.genre("Hip Hop") 
+>> <Song @statement = @name='', @genre = "Hip Hop>
+```
 
+The first part of Figure 3 is where we chain the methods and the second part is the result.
+
+Another 30 secs after I overtook the same messenger that gave me the message earlier and I said "What happened to all that stamina?" He then did a sudden sprint wizing pass a Taxi Driver (Class Method) while I turned the corner. On my arriving at the address is when I saw the sports cars (object instances) pop up. I hen got quicklly off my bike and delivered the package with 1% of battery life left. 
 
 
