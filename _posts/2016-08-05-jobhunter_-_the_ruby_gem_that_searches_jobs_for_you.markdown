@@ -7,11 +7,11 @@ date:   2016-08-05 02:05:41 -0400
 
 Ruby gems are snippets of code that are built to be used as a plugin with a particular function and is packaged in such a way that it can be used by anyone and easily modified. There are gems built for anything you can't think of and chances are if you imagined it, it has probably been built before. 
 
-With this in mind I decided to build a Ruby gem that addresses an immediate issue I had - and given the recent 84 downloads I've seen within 2 hours of publishing my gem on rubygems.org others like myself share as well. This issue was to find a job that accurately matched my skills and experience and didn't require as much time scouring the internet to find.
+With this in mind I decided to build a Ruby gem that addresses an immediate issue I had and given the recent 84 downloads I've seen within 2 hours of publishing my gem on rubygems.org others like myself share as well. This issue was to find a job that accurately matched my skills and experience and didn't require as much time scouring the internet to find.
 
-To do this I would have to find a single page website that I could scrape the information off and return it in human readable form. For those of you who don't know what scraping is - it's a way to get information from off of web pages via it's html or xml files and use this to get any information you want. For instance, one could go on a local newspaper's website and scrape all the articles about crime and get a  node-set detailing all the location where all the incidents took place. Then use this to draw a pattern showing the location where crime is most prevalent. 
+To do this I would have to find a single page website that I could scrape the information off of and return it in a human readable format. For those of you who don't know what scraping is - it's a way to get information from web pages via their html or xml files and use them to get any information you want. For instance, one could go on a local newspaper's website and scrape all the articles about crime and get a node-set detailing all the locations where there was criminal activity. Then use this to draw a pattern showing the location where crime is most prevalent. 
 
-In order to accomplish my task of scraping jobs from the internet I went to one of the more popularly  used jobsites on the internet [Indeed.com](http://). Housing millions of jobs world-wide  Indeed is a great resource for finding jobs. However,  there was one problem - *Indeed* is not a single page website. In order to find any particular job, the user must enter a custom search in a search box that will return the jobs listing based on the search. That would mean I would have to scrape every page that loaded from the results of the search making scraping much more difficult or I would have to use an additional program to help streamline the task. 
+In order to accomplish my task of scraping jobs from the internet I went to one of the more popular jobsites on the internet: [Indeed.com](http://). Housing millions of jobs world-wide *Indeed* is a great resource for finding jobs. However,  there was one problem - *Indeed* is not a single page website. In order to find any particular job, the user must enter a custom search in a search box that will return the jobs listing based on the search. That would mean I would have to scrape every page that loaded from the results of the search making scraping much more difficult or I would have to use an additional program to help streamline the task. 
 
 I looked at other job sites that were built in a single page structure like [garysguide](http://).com and [angellist.co](http://) but were not as vast as Indeed neither were they plentiful. Then I searched for API's (Application program interface) at this great resource [http://www.programmableweb.com/category/all/apis](http://) , (It claims to be the largest API's directory on the web). and I found that *Indeed* has an API. For reference what an API does is simply a library of code similar to a Ruby gem that helps you build other programs. In this way it would help me build my Ruby gem.
 
@@ -20,7 +20,7 @@ The API works like this: It provides you with an XML feed which uses an http req
 
 Below is an example of what it looks like.
 
-The long line of text is the xml request. In it are key words like my publisher's ID q for query (enter any keyword search) l for location of the job for example "New York" a limit for how many jobs you want  returned after you return a search ect. etc. You get the idea. The data that was returned was in XLM format which has its own markup. For example, If I did a search with a location of New York it would return a location header that would read "New York."
+The long line of text is the XML request. In it are key words like my publisher's ID q for query (enter any keyword search) l for location of the job for example "New York" a limit for how many jobs you want  returned after you return a search ect. etc. You get the idea. The data that was returned was in XLM format which has its own markup. For example, If I did a search with a location of New York it would return a location header that would read "New York."
 
 Like so: "<location> New York <location>" Pretty neat! You could even use the http link and paste in the browser's url window and it would return the entire xml document. But this would not be very useful if we wanted other folks from around the world to use it and to read it in a legible and concise format. We would then have to parse it with a program. One such program is Nokogiri a ruby gem that searches and parses documents from the web returning a node-set of elements. 
 
@@ -83,7 +83,11 @@ puts "1. Enter the max number of the search results you want return"
         scraper.radius = "radius=" + input
       end
 ```
-The code above would then get interpreted  into the scraper class as values in the http request and return a customized list of jobs and job details. 
+The code above would then be saved into the scraper class as instance variables in the http request and return a customized list of jobs and job details. See below for how I saved them inside the http link.
+
+   ` uri = "http://api.indeed.com/ads/apisearch?publisher=3881286689960538&#{@q}&#{@l}&sort=&#{@radius}&st=&jt=&start=&#{@limit}&fromage=&filter=&latlong=1&#{@co}&chnl=&userip=1.2.3.4&useragent=Mozilla/%2F4.0%28Firefox%29&v=2"`
+
+In  the code snippet above the words with the @ symbol attached are the instance variables that save the data from the cli input.
 
 Now I wanted to display this information with the Job class methods but unfortunately I encountered some problems getting the instance of a job to collaborate with the scraper class. So I decided to iterate over the array that the Scraper instance method scrape jobs returned and print the information out onto the CLI. 
 
@@ -109,14 +113,8 @@ if input !="exit"
 And wallah! However, this was not the end of it. With making a gem comes a particular domain structure which I had to painfully learn through trial and error and research. I learnt that there are many ways to build a gem once you are finished creating the logic. But once I settled on the *bundle gem* and *gem build* command I was able to create a gemspec file
 with a list of all the gem's dependencies and from that create the gem. 
 
-Returning to what I said about the domain structure, the most important thing is to have the executable file in the right place and to have your gemspec file direct to this path. As this is your computer's operating system knows to run the gem once it is installed by simply typing the name of the gem in the command line. To change the path you would have to go into the gemspec file and change the spec.bindir  spec, a fact that I did not know and what caused me to yank a gem that I had already publish, rebuild my gem and republish to rubygems.org under another version. version 0.1.1. As the first version  0.1.0 did not work due to the fact that my executable was not saved as 'bin' which is where my executable file was. Instead it was saved as 'exe.' So when I installed the gem locally on my computer every time  I type the name of the gem nothing would happen because the computer was looking for a folder called 'exe' and not 'bin.'
+Returning to what I said about the domain structure, the most important thing is to have the executable file in the right place and to have your gemspec file direct to this path. As this is your computer's operating system knows to run the gem once it is installed by simply typing the name of the gem in the command line. To change the path you would have to go into the gemspec file and change the spec.bindir  spec, a fact that I did not know and what caused me to yank a gem that I had already publish, rebuild my gem and republish to rubygems.org under another version. version 0.1.1. As the first version  0.1.0 did not work due to the fact that my executable was not saved as 'bin' which is where my executable file was. Instead it was saved as 'exe.' So when I installed the gem locally on my computer every time I type the name of the gem nothing would happen because the computer was looking for a folder called 'exe' and not 'bin.'
 
-Through many attempts I was finally able to publish my gem here at [https://rubygems.org/gems/job_hunter_cli](http://).
-Although not perfect the gem does what I intended and it can customize the result based on the input of the user. Here is a quick instructional vide on how to use it. [https://vimeo.com/177637445](http://)
+After several attempts I was finally able to publish my gem here at [https://rubygems.org/gems/job_hunter_cli](http://).
+Although not perfect the gem does what I intended and it can customize the result based on the input of the user. Here is a quick instructional video on how to use it. [https://vimeo.com/177637445](http://)
 
-
-
-
-
-First I had to look for a web app that returned the information I was loking for on a single page.
-it was a daunting task reading through all the docs to understand how to build the gem itself. 
