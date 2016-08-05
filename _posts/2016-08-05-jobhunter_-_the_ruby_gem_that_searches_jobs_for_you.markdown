@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "JobHunter  - the Ruby Gem that searches jobs for you"
-date:   2016-08-05 06:05:41 +0000
+date:   2016-08-05 02:05:41 -0400
 ---
 
 
