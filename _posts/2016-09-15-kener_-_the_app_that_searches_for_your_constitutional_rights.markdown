@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Kener - The app that searches for your constitutional rights. "
-date:   2016-09-15 07:02:47 +0000
+date:   2016-09-15 03:02:48 -0400
 ---
 
 
@@ -22,7 +22,7 @@ These are the things I learn while working on my Sinatra Application. Sinatra is
 
 Another important ideology I learnt is that essentially most applications in one form or another is a CMS or Content Management System. So if you can successfully build one then you are off to a good start as a programmer. 
 
-With my Sinatra Application I wanted to build something meaningful, more specifically something that could be useful to the underrepresented groups, minorities, marginalized communities where knowledge of one's constitutional rights are not taught and where without this knowledge one could be exploited by the forces that be. 
+With my Sinatra Application I wanted to build something meaningful, more specifically something that could be useful to the underrepresented groups, minorities, marginalized communities where knowledge of one's constitutional rights are not inherently taught and where without this knowledge one could be exploited by those in authority. And by authority I don't just mean the police, I also mean your boss, your landlord, your professor anyone who has authority over you in some way . Although, I was inspired to create this app after seing the numerous acts of violence by certain police officers in the US, which could have possibly been avoided or quelled had not the victims have prior knowledge of their rights.
 
 Although this project may seem ambitious for my first CMS it is still in its early stages but it does the basic job of creating a search option where the user can type a key word where the database will return an amendment or amendments that closely match the key word. The question is then posted on the main page of the application alongside questions belonging to other registered users.
 
