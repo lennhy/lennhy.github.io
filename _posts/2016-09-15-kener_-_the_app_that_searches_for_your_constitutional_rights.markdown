@@ -13,8 +13,8 @@ While building this application I quickly discovered that the work I needed to p
 Which leads me to this point that to pursue a career in Software Development one doesn't have to invest loads of money for an education in Computer Science. The one requirement is that you invest the necessary time and have the unwavering quality of persistence to learn and practice programming the right way until you get better. It's like that saying "practice practice" or "don't give up..."
 
 With that said here are the important points you should have in mind that will help lead you to the right track to starting a successful project or career as a software developer.
-. 
-**Be prepared to constantly read through tons of documentation, which never ends.** 
+ 
+**Be prepared to constantly read through tons of documentation, which never ends.**
 
 Because of the nature of software development things are ever changing. We constantly find new and improved ways to build things and to make them better. This is a key quality of software engineering and it is why technology has evolved from analogue devices to the complex digital and virtual machines of our present. In my time "beating the code" one of the things that I've realized is that once you start learning programming the learning never ends. And this isn't only because things are constantly changing. As humans we tend to forget things and can absorb only a small percentage of what we learn. Luckily the principle concepts of what we learn are much easier to stay with us for a longer time. By this I mean the ubiquitous processes and practices we implement into our code. Like design patterns such as **DRY** (Don't repeat yourself) or **Reusable code**.
 
