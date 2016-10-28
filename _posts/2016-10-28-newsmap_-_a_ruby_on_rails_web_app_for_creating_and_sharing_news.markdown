@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "NewsMap - A Ruby on Rails Web App for creating and sharing news "
-date:   2016-10-28 10:02:12 +0000
+title:  "NewsMap - A Rails Web App for people to create and share news "
+date:   2016-10-28 06:02:12 -0400
 ---
 
 
