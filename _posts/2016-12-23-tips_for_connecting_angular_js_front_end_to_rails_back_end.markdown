@@ -5,23 +5,24 @@ date:   2016-12-22 20:33:20 -0500
 ---
 
 
-Picture Angualr JS like a tool box that we are going to use on a car engine. Our Tools Front End are the services that come with Angular JS and our Back End is the rails Api. 
+Picture Angualr JS like a tool box that we can use to manipulate our car engine (the Rails backend api) and our toolbox comes with tools that we call services.
 
 
 ANGULAR TOOLS
 
    1. Services
    2. http
-   3. forms
+   3. UI-Router
+   3. Forms
    4. Controllers
    
-	 
-RAILS
+	 RAILS
 
-	1. Controller
-	2. Routes
-	3. Serializers
-	4. Bower
+   1. Controller
+   2. Routes
+   3. Serializer
+   4. Bower
+	
 
 
 
