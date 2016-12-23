@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Tips for Connecting Angular JS Front End to Rails Back End "
-date:   2016-12-23 01:33:19 +0000
+date:   2016-12-22 20:33:20 -0500
 ---
 
 
@@ -19,18 +19,15 @@ Picture Angualr JS like a tool box that we are going to use on a car engine. Our
 **RAILS:**
 	
 	
-	 1. Controller
-	 2. routes
-	 3. serializers:
-	     a. active_model_serializer gem
-	 4. bower
-	     a. bower gem 
+ 1. Controller
+ 2. routes
+ 3. serializers:
+ 4. bower
 			 
 
 
 
-**Intro
-**
+**Intro**
 
 When starting a project where you are connecting a front-end framework like Angular with the rails API It will save you a lot of time if you use the package manager *Bower* to download all your front end dependencies and help create the correct structure for your asset pipeline. If done correctly this will resolve any issues like rails not knowing where your HTML templates are in your  JavaScript folder in relation to your rails views/layouts/application.html.erb and views/application/index.html.erb templates. These rails templates hold the main layout where all your HTML templates from your javascript folder where your angular directives are binded will be placed.
 
@@ -79,7 +76,6 @@ My solution for this was to use $index as a value in the ng-model that is adding
  </span>
 ```
 
-CSRF
 
 
 **Routing**
@@ -111,6 +107,7 @@ Make sure you build a controller, action and corresponding route for every model
 
 *A route in my config/routes.rb file like so:
 *
+
 ```
   get '/comics' => 'comics#index'
 ```
