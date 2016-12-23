@@ -16,7 +16,8 @@ ANGULAR TOOLS
    3. Forms
    4. Controllers
    
-	 RAILS
+
+RAILS
 
    1. Controller
    2. Routes
