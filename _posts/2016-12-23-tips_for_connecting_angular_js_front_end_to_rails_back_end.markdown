@@ -8,20 +8,20 @@ date:   2016-12-22 20:33:20 -0500
 Picture Angualr JS like a tool box that we are going to use on a car engine. Our Tools Front End are the services that come with Angular JS and our Back End is the rails Api. 
 
 
-**ANGULAR TOOLS:**
+**ANGULAR TOOLS**
 
-   1. Services:
+   1. Services
    2. http
    3. forms
    4. Controllers
    
 	 
-**RAILS:**
+**RAILS**
 	
 	
  1. Controller
  2. routes
- 3. serializers:
+ 3. serializers
  4. bower
 			 
 
@@ -34,8 +34,7 @@ When starting a project where you are connecting a front-end framework like Angu
 
 
 
-**The asset pipline
-**
+**The asset pipline**
 
 The key to keeping the correct file and folder structure so that rails knows where all you view templates for angular are in relation to your main layout file is to maintain your appliication.js with the follwoing required dependencies:
 
@@ -105,8 +104,7 @@ Make sure you build a controller, action and corresponding route for every model
 
 ```
 
-*A route in my config/routes.rb file like so:
-*
+*A route in my config/routes.rb file like so:*
 
 ```
   get '/comics' => 'comics#index'
