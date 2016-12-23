@@ -8,7 +8,7 @@ date:   2016-12-22 20:33:20 -0500
 Picture Angualr JS like a tool box that we are going to use on a car engine. Our Tools Front End are the services that come with Angular JS and our Back End is the rails Api. 
 
 
-**ANGULAR TOOLS**
+ANGULAR TOOLS
 
    1. Services
    2. http
@@ -16,25 +16,24 @@ Picture Angualr JS like a tool box that we are going to use on a car engine. Our
    4. Controllers
    
 	 
-**RAILS**
-	
-	
- 1. Controller
- 2. routes
- 3. serializers
- 4. bower
-			 
+RAILS
+
+	1. Controller
+	2. Routes
+	3. Serializers
+	4. Bower
 
 
 
-**Intro**
+
+Intro =====
 
 When starting a project where you are connecting a front-end framework like Angular with the rails API It will save you a lot of time if you use the package manager *Bower* to download all your front end dependencies and help create the correct structure for your asset pipeline. If done correctly this will resolve any issues like rails not knowing where your HTML templates are in your  JavaScript folder in relation to your rails views/layouts/application.html.erb and views/application/index.html.erb templates. These rails templates hold the main layout where all your HTML templates from your javascript folder where your angular directives are binded will be placed.
 
 
 
 
-**The asset pipline**
+The asset pipline =====
 
 The key to keeping the correct file and folder structure so that rails knows where all you view templates for angular are in relation to your main layout file is to maintain your appliication.js with the follwoing required dependencies:
 
@@ -54,8 +53,8 @@ An example of a problem I ran into by not including one of the above dependencie
 
 
 
-**Angular Forms and persisting or changing data
-**
+Angular Forms and persisting or changing data =====
+
 
 In Angular + Rails instead of writing out the action and method directly in the form like we would in a Rails app we create a function that creates , updates, destroy etc... the data which is usually executed via ng-submit or the ng-click directive. 
 
@@ -77,14 +76,14 @@ My solution for this was to use $index as a value in the ng-model that is adding
 
 
 
-**Routing**
-
+Routing  =====
+ 
 Use UI-Router. You can use resolve key in the state method to return and display any data before the promises for any get or post requests are completed for the page . Then the data on the DOM will be updated without any flicker or noticeable change.  
 
 
 
 
-**Persist data**
+Persist data  =====
 
 Make sure you build a controller, action and corresponding route for every model that you serialize with active_model_serializer. This gives you the correct url to use for your service to process the json data after it is resolved by the UI-Router . With this data the service can then return the all the data associated with the comic model without reloading the page. For example to return a json object url for all my comics this is what I did:
 
@@ -105,6 +104,7 @@ Make sure you build a controller, action and corresponding route for every model
 ```
 
 *A route in my config/routes.rb file like so:*
+
 
 ```
   get '/comics' => 'comics#index'
