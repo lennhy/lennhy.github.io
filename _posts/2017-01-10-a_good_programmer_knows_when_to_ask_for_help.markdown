@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "A good programmer knows when to ask for help "
-date:   2017-01-10 04:15:10 +0000
+date:   2017-01-09 23:15:11 -0500
 ---
 
 
