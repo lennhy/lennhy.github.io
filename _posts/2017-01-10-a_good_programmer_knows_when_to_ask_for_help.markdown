@@ -9,7 +9,7 @@ Sometimes I find myself in a bind with the code I am writting. Either it is not 
 
 The problem with this is that if everytime you have a problem you go to someone for help, you don't give yourself the chance to mature. But by becoming dependent on someone else to debug your code you won't ever learn how to be independent and solve your own problems when there is no one around to help you. Instead try to figure out the problem  on your own first and if you still can't solve it ask for help from someone with experience.
 
-I've found that even after many unsuccesful attempts of trying to fix a bug, I learn a lot of invaluable knowledge along the way. Knowledge that I would not have known otherwise if I were to have ask for help right away! 
+I've found that even after many unsuccesful attempts of trying to fix a bug, I learn a lot of invaluable knowledge along the way with the research I've gathered. Knowledge that I would not have known otherwise if I were to have ask for help right away! 
 
 Call it* Compound learning* !  
 
