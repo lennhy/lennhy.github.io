@@ -5,7 +5,7 @@ date:   2017-01-09 23:15:11 -0500
 ---
 
 
-Sometimes I find myself in a bind with the code I am writting. Either  it is not giving me the result I expect or it has a bug that I can't seem to fix right away. It can be tempting to ask someone with more experience to help fix the bug. But this may not be a good practice to have. 
+Sometimes I find myself in a bind with the code I am writting. Either it is not giving me the result I expect or it has a bug that I can't seem to fix right away, and It can be tempting to ask someone with more experience for help. But as you will see this may not be the best solution. 
 
 The problem with this is that if everytime you have a problem you go to someone for help, you don't give yourself the chance to mature. But by becoming dependent on someone else to debug your code you won't ever learn how to be independent and solve your own problems when there is no one around to help you. Instead try to figure out the problem  on your own first and if you still can't solve it ask for help from someone with experience.
 
