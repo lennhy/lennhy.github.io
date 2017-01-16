@@ -1,19 +1,20 @@
 ---
 layout: post
-title:  "Making a simple custom search filter with Javascript and SQL"
-date:   2017-01-16 22:00:41 +0000
+title:  "Making a simple custom search filter with JavaScript and SQL"
+date:   2017-01-16 17:00:42 -0500
 ---
 
 
 Ever wondered how webpages implement filters ? That little search box where you can type what ever you want to search for and the information on the web page updates like just magic. On every keystroke it dynamically updates the DOM changing the content literally from your finger tips. 
 
-This kind of funcitonality has been around since the first search engine so there are libraries of filters that you could implement into your code with actually doing any coding.
+This kind of functionality has been around since the first search engine so there are libraries of filters that you could implement into your code with actually doing any coding.
 
-But we don't want this we want to be able to write our own custom filters to stand amongst the programmers that can create from their thoughts and not use someone else's code. To go a step further We don't want to use libraries like JQuery, or  database library like Active Record to make it easier, no - we want to use native Javascript and SQL. In fact we won't even use the Javascript filter method! It just got real. 
+But we don't want this we want to be able to write our own custom filters to stand amongst the programmers that can create from their thoughts and not use someone else's code. To go a step further We don't want to use libraries like JQuery, or  database library like Active Record to make it easier, no - we want to use native JavaScript and SQL. In fact we won't even use the JavaScript filter method! It just got real. 
 
-Why? Because if you want to have more than just a basic understanding of any particular language like Javascript or SQL, you need to know how to use it. You need to know how to implement patterns and algorithms in that language and not rely on framworks or libraries to do your dirty work!
+Why? Because if you want to have more than just a basic understanding of any particular language like JavaScript or SQL, you need to know how to use it. You need to know how to implement patterns and algorithms in that language and not rely on framworks or libraries to do your dirty work!
 
 For this tutorial I created a custom filter through trial and error using Javascrit, SQL and Ruby. 
+My web app: returns amendments from the constituion and saves it the user's acccount. 
 
 At first I wanted to create a search function similar to Google's search where the user can type in a sentence in a search input to return all relevant information using the wildcards. To create a custom search in SQL you use the [wildcard ](http://www.w3schools.com/sql/sql_wildcards.asp) characters with the word "LIKE" (SQL wildcards are used to search for data within a table). See below.
 
