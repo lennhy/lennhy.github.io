@@ -1,13 +1,13 @@
 ---
 layout: post
 title:  "An example of a Binary Search algorithm in Javascript "
-date:   2017-01-19 03:25:50 +0000
+date:   2017-01-18 22:25:51 -0500
 ---
 
 
-If you have an array and you want to search throug it for a particular value it can be quite inefficient to check each index value from the first to the last.  We call this Linear Search. But there is a much more efficient approach called Binary Search. it is an algorythim that saves greater computing power and time by making less inquiries to find the particular value in question. 
+If you have an array and you want to search through  it for a particular value it can be quite inefficient to check each index value from the first to the last.  We call this Linear Search. But there is a much more efficient approach called Binary Search. it is an algorithm that saves greater computing power and time by making less inquiries to find the particular value in question. 
 
-Here is an example of a Binary Search algorythm that I made in Javascript:
+Here is an example of a Binary Search algorithm  that I made in Javascript:
 
 ```
 var array = [2, 4, 6, 9, 13, 18, 39, 40, 100, 188, 300];
@@ -70,7 +70,7 @@ The while loop runs only if the min value is always lower than the lenght of the
   while( max < arr.length){......
 ```
 
-For every loop I console.log the min, max and average values on every loop to see if the algorithm works. The algorthm should change the values of min or max if index Average or indAvg is not equal to the value argument (42). 
+For every loop I console.log the min, max and average values on every loop to see if the algorithm works. The algorithm  should change the values of min or max if index Average or indAvg is not equal to the value argument (42). 
 
 ```
   console.log("this is the min value "+ min + " which is equal to " + arr[min]);
@@ -78,13 +78,13 @@ For every loop I console.log the min, max and average values on every loop to se
     console.log("this is the average value "+ indAvg + " which is equal to " + arr[indAvg]);
 ```
 
-Then the algorthim uses the min and max values to find the average or center index of the array (the mean)
+Then the algorithm  uses the min and max values to find the average or center index of the array (the mean)
 
 ```
       indAvg = Math.round((min + max)/2);
 ```
 
-and checks to see if the value of the average's index is greater than or less than the value argument. If the arr[indAvg]  is less than the value then we check the right half of the array starting with the minmum value which is set to equal the indAgvg +1.
+and checks to see if the value of the average index is greater than or less than the value argument. If the arr[indAvg]  is less than the value then we check the right half of the array starting with the minimum  value which is set to equal the indAgvg +1.
 
 ```
   if (arr[indAvg] < val){
@@ -92,7 +92,7 @@ and checks to see if the value of the average's index is greater than or less th
           }
 ```
 
-We do this becasue we now know that the left half of the array of 5 indeces do not hold the value argument we are looking for. So we cut the work into half. Now we are left with one half of the array to query. If it were the other way around then we would make the max value equal to indeAvg -1 and query the left half of the array of indeces instead. 
+We do this because we now know that the left half of the array of 5 indices do not hold the value argument we are looking for. So we cut the work into half. Now we are left with one half of the array to query. If it were the other way around then we would make the max value equal to indeAvg -1 and query the left half of the array of indices instead. 
 
 ```
  else if (arr[indAvg] > val){
@@ -100,7 +100,7 @@ We do this becasue we now know that the left half of the array of 5 indeces do n
           }
 ```
 
-The last statemtent (the else statement) would only run if none of the prior options (if and if else statements were true). Then we would return the index value that holds the value argument (42).
+The last statement (the else statement) would only run if none of the prior options (if and if else statements were true). Then we would return the index value that holds the value argument (42).
 
 ```
     else{
@@ -109,7 +109,7 @@ The last statemtent (the else statement) would only run if none of the prior opt
     
 ```
 
-If this else statemtnent does not run either one of the if or else statement prior to this would run  this time splitting the other half of the new array to be querried. 
+If this else statement does not run either one of the if or else statement prior to this would run  this time splitting the other half of the new array to be querried. 
 
 As an edge case at the beginning of the while loop we first check to see if the min value is larger than the max value. This eventually happens whenever the value argument is not present in the array.
 
@@ -120,8 +120,8 @@ As an edge case at the beginning of the while loop we first check to see if the 
 ```
 
 The explanation being that because the values on either side of the half of the array do not contain the value parameter  
-and tthe min value is always incrementing while the max decrements, at some point the values will overlap if there is no value argument to equal to the average index. In turn it will cause the min value to be greater than the max value.
+and the min value is always incrementing while the max decrements, at some point the values will overlap if there is no value argument to equal to the average index. In turn it will cause the min value to be greater than the max value.
 
-It should be noted that Binary Search is not a perect soution as it can only work if the array is sorted first from lowest to largest value.
+It should be noted that Binary Search is not a perfect solution as it can only work if the array is sorted first from lowest to largest value.
 
 
