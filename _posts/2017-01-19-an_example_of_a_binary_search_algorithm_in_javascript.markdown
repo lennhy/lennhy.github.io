@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "An example of a Binary Search algorithm in Javascript "
+title:  "Making a simple Binary Search algorithm in Javascript "
 date:   2017-01-18 22:25:51 -0500
 ---
 
