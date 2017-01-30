@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "How to upload images with rails + angular js Saga. Part 1 "
-date:   2017-01-30 21:56:57 +0000
+title:  "How to upload images with rails + angular js + paperclip + base64. Part 1 "
+date:   2017-01-30 16:56:58 -0500
 ---
 
 I have a comic app that I want to accept image uploads for the publishers, users and comic book pages. After several attempts to upload images with rails and angular I realized how complicated this process could be given the specific toolbox. To start there were not many tutorials availale on the specific subject. In addition, the tutorials were limited leaving you to, well figure out the rest. 
@@ -82,6 +82,7 @@ end
 
 *ComicController.rb
 *
+
 ```
  def author_params
     params.require(:author).permit(:bio, :name, :avatar)
