@@ -6,7 +6,7 @@ date:   2017-01-30 16:56:58 -0500
 
 I have a comic app that I want to accept image uploads for the publishers, users and comic book pages. After several attempts to upload images with rails and angular I realized how complicated this process could be given the specific toolbox. To start there were not many tutorials availale on the specific subject. In addition, the tutorials were limited leaving you to, well figure out the rest. 
 
-With enough research I found 3 helpful methods to upload and persist a single image or set of images to the database. Although a seperate server would have been the more ideal place to store images I started with the database first. The three methods are with [HTML5 file API](https://developer.mozilla.org/en-US/docs/Using_files_from_web_applications), [ng-file-upload](https://github.com/danialfarid/ng-file-upload) module and the [angular-base64-upload](https://www.npmjs.com/package/angular-base64-upload) module. 
+With enough research I found 3 helpful ways to upload and persist a single image or set of images to the database. Although a seperate server would have been the more ideal place to store images I started with the database first. The three methods are with the [HTML5 file API](https://developer.mozilla.org/en-US/docs/Using_files_from_web_applications), the [ng-file-upload](https://github.com/danialfarid/ng-file-upload) module and the [angular-base64-upload](https://www.npmjs.com/package/angular-base64-upload) module. 
 
 At first I wanted to use the HTML5 file API but I didn't want to have to write all that extra logic to manage the images so instead I used a gem. Paperclip is a rails gem that makes it easier to upload and manage files. it has a has_attached_file attribute that provides useful attributes like file size of the image, it's content type etc...
 
@@ -16,31 +16,30 @@ After doing more research I found that I needed to add another model that has a 
 Read more at [pluralsight](https://www.pluralsight.com/guides/ruby-ruby-on-rails/handling-file-upload-using-ruby-on-rails-5-api#fix7rj1eqCBOImxm.99) 
 
 **For single file upload we will start with the following tools.**
+
 Tools
 1. Paperclip 
-2. Use ng-upload
-3. Use base64 
+2. ng-upload
+3. base64 
 
 **Installation instructions for paperclip**
 
 Install [ImageMagick](http://www.imagemagick.org/script/index.php)
 
 On Linux, use apt-get:
-sudo apt-get install imagemagick -y
+sudo apt-get install imagemagick
 On Windows download it [here](https://www.imagemagick.org/script/download.php#windows)
 
 
-Paperclip
-Add gem "paperclip" to your gem file
-bundle install
+Add gem "paperclip" to your gem file then bundle install
 
 Add the below attribute to the main model comic model
-*Comic Model*
 
-  ```
+*Comic.rb*
+
+```
 has_attached_file :cover, :styles => {large: "1000x1000>", medium: "300x300>", thumb: "150x150#" },
                             :default_style => :thumb, :default_url=> "/images/:style/cover.png"
-
   validates_attachment_content_type :cover, content_type: /\Aimage\/.*\z/
 ```
 
@@ -52,7 +51,7 @@ cover_file_size
 cover_content_type
 cover_updated_at
 
-Run rails g paperclip comic cover.
+Run *rails g paperclip comic cover*
 FYI Comic is the main model where the single image attachment (*cover*) will be stored. *Cover* is the paperclip attachment that will hold the single image.
 
 This will add a migration file with two migrations: add_attachment and remove_attachment. 
@@ -80,7 +79,7 @@ end
 
 ```
  def author_params
-    params.require(:author).permit(:bio, :name, :avatar)
+    params.require(:author).permit(:bio, :name, :cover)
   end
 ```
 
@@ -130,10 +129,10 @@ vm.book = {
 
 All the keys will be filled with data in the corresponding form fields. Note cover has an empty hash to hold the relevant attachment attributes. 
 
-**Below is the input for the attachment  'cover'**
+Below is the input for the attachment  'cover'
 
-  ```
-<label>Upload a Cover Page</label>
+```
+  <label>Upload a Cover Page</label>
   <img ngf-thumbnail="cover"/>
   <div class="button" ngf-select ng-model="cover" name="cover" ngf-pattern="'image/*'"
   ngf-accept="'image/*'" ngf-max-size="20MB" ngf-min-height="100">Select</div><br>
@@ -225,7 +224,7 @@ def create
 ```
 
 
-**Now in the view you can display the image with the .cover attribute or .cover.url attribute inside of ng-src **
+**Now in the view you can display the image with the .cover attribute or .cover.url attribute inside of ng-src**
 
 
 ```
@@ -234,4 +233,4 @@ def create
 ```
 
 
-In the next blog *How to upload multiple images* i will explain how to incorporate the base64, why we use it and how to upload multiple images. 
+In the next blog *How to upload multiple images* i will explain how to incorporate the base64 module, why we use it and how to upload multiple images. 
