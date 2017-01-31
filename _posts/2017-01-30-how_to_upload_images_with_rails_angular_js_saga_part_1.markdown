@@ -23,35 +23,36 @@ Tools
 
 **Installation instructions for paperclip**
 
-*Install* [ImageMagick](http://www.imagemagick.org/script/index.php)
+Install [ImageMagick](http://www.imagemagick.org/script/index.php)
 
 On Linux, use apt-get:
 sudo apt-get install imagemagick -y
 On Windows download it [here](https://www.imagemagick.org/script/download.php#windows)
 
 
-*Paperclip*
+Paperclip
 Add gem "paperclip" to your gem file
 bundle install
 
 Add the below attribute to the main model comic model
-#Comic Model
+*Comic Model*
 
-```
-  has_attached_file :cover, :styles => {large: "1000x1000>", medium: "300x300>", thumb: "150x150#" },
+  ```
+has_attached_file :cover, :styles => {large: "1000x1000>", medium: "300x300>", thumb: "150x150#" },
                             :default_style => :thumb, :default_url=> "/images/:style/cover.png"
 
   validates_attachment_content_type :cover, content_type: /\Aimage\/.*\z/
 ```
 
+
 Paperclip will wrap up to four attributes (all prefixed with that attachment's name, so you can have multiple attachments per model). These attributes are:
 
-<attachment>_file_name
-<attachment>_file_size
-<attachment>_content_type
-<attachment>_updated_at
+cover_file_name
+cover_file_size
+cover_content_type
+cover_updated_at
 
-run rails g paperclip comic cover 
+Run rails g paperclip comic cover.
 FYI Comic is the main model where the single image attachment (*cover*) will be stored. *Cover* is the paperclip attachment that will hold the single image.
 
 This will add a migration file with two migrations: add_attachment and remove_attachment. 
@@ -60,6 +61,7 @@ run rake db:migrate
 
 Add cover to your JSON comic serializer if you have one.
 *ComicSerializer.rb*
+
 
 ```
 class ComicSerializer < ActiveModel::Serializer
@@ -71,40 +73,47 @@ class ComicSerializer < ActiveModel::Serializer
 end
 ```
 
-*Make sure to permit your params with strong params*
 
+**Make sure to permit your params with strong params**
 *ComicController.rb*
+
 
 ```
  def author_params
     params.require(:author).permit(:bio, :name, :avatar)
   end
 ```
-*Install ng-file-upload module*
+
+**install ng-file-upload module**
+
 with npm the command is : npm install ng-file-upload
 with bower the command is bower install ng-file-upload-shim --save(for non html5 suppport) and 
 bower install ng-file-upload --save
 the shim part is for browsers that are not compatible with the file api
 
-*In your main App.js
-App.js include the ngFileUpload module*
+
+**App.js include the ngFileUpload module**
+
+*App.js*
 
 ```
-      .module('app', ['ui.router', 'templates', 'ngMessages', 'Devise','ngRoute', 'ngFileUpload'])
-
+.module('app',['ui.router', 'templates', 'ngMessages', 'Devise','ngRoute', 'ngFileUpload'])
 ```
-and in your ComicController.js include 'Upload'
+
+
+**In your ComicController.js include 'Upload'**
+
+*ComicController.js*
 
 ```
 function NewBookController(BookService, regions, genres, $scope, Upload, $http) {
+```
+
+
+**Create a JSON object with the keys for the comic model and empty values**
 
 ```
-*ComicBookController.js*
-In my angular comic controller 
-I created a JSON object with the keys for the comic model and empty values
-
-```
-  vm.book = {
+vm.book = {
        title: '',
        description: '',
        issue:'',
@@ -116,31 +125,34 @@ I created a JSON object with the keys for the comic model and empty values
        genre_ids: [],
        cover: {}
   };
-	
 ```
+	
+
 All the keys will be filled with data in the corresponding form fields. Note cover has an empty hash to hold the relevant attachment attributes. 
 
-In the form are all the corrresonding for fields 
-Here is the part for the cover input
-```
-  <!-- single upload -->
-  <label>Upload a Cover Page</label>
+**Below is the input for the attachment  'cover'**
+
+  ```
+<label>Upload a Cover Page</label>
   <img ngf-thumbnail="cover"/>
   <div class="button" ngf-select ng-model="cover" name="cover" ngf-pattern="'image/*'"
   ngf-accept="'image/*'" ngf-max-size="20MB" ngf-min-height="100">Select</div><br>
-
 ```
+
+
 The ng-model is the part where the image will be upload via the ng-file-upload angular module.
 
 The ngf-thumbnail-part will display a preview of the image after it has been submitted. 
 
 Finally we create an http.post service to send the image to the rails api which will be passed via the rails route 
-```
-routes.rb
-post   '/comics', to: 'comics#post'
- 
-ComicController.js
 
+*routes.rb*
+
+`post   '/comics', to: 'comics#post'`
+ 
+*ComicController.js*
+
+```
 vm.createBook = function() {
      BookService
        //  before submit form
@@ -159,15 +171,16 @@ vm.createBook = function() {
          })
    }
 }
-
 ```
+
 After the form is submitted the data from the form fields is passed into the vm.book object and sent to the rails api via the http.post post service above.
 
 Here is the rest of the post service in the serivce.js file
 
-Service.js 
+*Service.js* 
 
-```  
+
+```
 this.httpCreateBook = function(data) {
     var req = {
      method: 'POST',
@@ -181,27 +194,25 @@ this.httpCreateBook = function(data) {
     .then(successCallback)
     .catch(errorCallback)
 
-    // returns a promise
-    // What to do when the request succeeds
-    // Success
     function successCallback(data){
       console.log(data)
     }
-    // what to do when the request fails
-    // failure
+
     function errorCallback(error){
       console.log(error)
     }
 }
-
 ```
+
+
+
 Back in the rails ComicController
-ComicController.rb
+*ComicController.rb*
 
-In the create method 
+The create action 
 
 ```
- def create
+def create
     binding.pry
       comic = Comic.new(comic_params)
       comic.users << current_user
@@ -212,11 +223,15 @@ In the create method
       end
   end
 ```
-Now in the view you can display the image with the .cover attribute or .cover.url attribute inside of ng-src 
+
+
+**Now in the view you can display the image with the .cover attribute or .cover.url attribute inside of ng-src **
+
 
 ```
 <img ngf-thumbnail="file">
- <!-- <img ng-src="{{ vm.avatar }}" width="300" height="auto" alt="" /> -->
-<img ng-src="{{ vm.avatar }}"/>
+<img ng-src="{{ vm.cover }}"/>
 ```
-In the next blog part two i will explain how to incorporate the base64, why we use it and how to upload multiple images. 
+
+
+In the next blog *How to upload multiple images* i will explain how to incorporate the base64, why we use it and how to upload multiple images. 
