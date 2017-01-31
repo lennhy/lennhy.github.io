@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "How to upload images with rails + angular js + paperclip + base64. Part 1 "
+title:  "How to upload single images with Rails, Angular js, Paperclip & Base64"
 date:   2017-01-30 16:56:58 -0500
 ---
 
@@ -15,25 +15,22 @@ When I set up the paperclip attachments inside of the comic model, I was able to
 After doing more research I found that I needed to add another model that has a belongs_to relationship to the main model. The model with the belongs_to relationship would contain the images but more on that in part 2 of the saga. 
 Read more at [pluralsight](https://www.pluralsight.com/guides/ruby-ruby-on-rails/handling-file-upload-using-ruby-on-rails-5-api#fix7rj1eqCBOImxm.99) 
 
-**For single file upload we will start with the following tools. 
-**
+**For single file upload we will start with the following tools.**
 Tools
 1. Paperclip 
 2. Use ng-upload
 3. Use base64 
 
-**Installation instructions for paperclip
-**
+**Installation instructions for paperclip**
 
-*Install [ImageMagick](http://www.imagemagick.org/script/index.php)
-*
+*Install* [ImageMagick](http://www.imagemagick.org/script/index.php)
+
 On Linux, use apt-get:
 sudo apt-get install imagemagick -y
 On Windows download it [here](https://www.imagemagick.org/script/download.php#windows)
 
 
-*Paperclip
-*
+*Paperclip*
 Add gem "paperclip" to your gem file
 bundle install
 
@@ -41,7 +38,6 @@ Add the below attribute to the main model comic model
 #Comic Model
 
 ```
-
   has_attached_file :cover, :styles => {large: "1000x1000>", medium: "300x300>", thumb: "150x150#" },
                             :default_style => :thumb, :default_url=> "/images/:style/cover.png"
 
@@ -63,8 +59,8 @@ This will add a migration file with two migrations: add_attachment and remove_at
 run rake db:migrate
 
 Add cover to your JSON comic serializer if you have one.
-*ComicSerializer.rb
-*
+*ComicSerializer.rb*
+
 ```
 class ComicSerializer < ActiveModel::Serializer
   attributes :id, :title, :description, :issue, :volume, :page_count, :issue_date, :graphic_novel, :region,  :users,  :genres, :created_at, :cover
@@ -73,23 +69,18 @@ class ComicSerializer < ActiveModel::Serializer
   has_many :ratings, serializer: RatingSerializer
   has_one :region
 end
-
-
 ```
 
-*Make sure to permit your params with strong params 
-*
+*Make sure to permit your params with strong params*
 
-*ComicController.rb
-*
+*ComicController.rb*
 
 ```
  def author_params
     params.require(:author).permit(:bio, :name, :avatar)
   end
 ```
-*Install ng-file-upload module
-*
+*Install ng-file-upload module*
 with npm the command is : npm install ng-file-upload
 with bower the command is bower install ng-file-upload-shim --save(for non html5 suppport) and 
 bower install ng-file-upload --save
@@ -108,8 +99,7 @@ and in your ComicController.js include 'Upload'
 function NewBookController(BookService, regions, genres, $scope, Upload, $http) {
 
 ```
-*ComicBookController.js
-*
+*ComicBookController.js*
 In my angular comic controller 
 I created a JSON object with the keys for the comic model and empty values
 
