@@ -4,6 +4,14 @@ title:  "A more visual approach to learning Object Orientated programming."
 date:   2016-06-30 14:16:34 -0400
 ---
 
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-9291847703941010",
+    enable_page_level_ads: true
+  });
+</script>
+
 ![](http://vignette1.wikia.nocookie.net/spongebob/images/f/f2/Spongebob_12_big_eyes.jpg/revision/latest?cb=20120113194744)
 
 Tired of writing the same code over and over in the console or in *IRB* ...why not use *pry*? For some they can read about object oriented concepts, write a few lines of code and be able to quickly grasp these concepts. But if you are like me and you learn better by seeing and doing, then you will want to hear about my experience learning object oriented programming in ruby. 
