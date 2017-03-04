@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "How to upload multiple images on the same model Rails & Angular"
-date:   2017-03-04 20:34:13 +0000
+title:  "How to upload multiple images on the same model Rails & Angular JS"
+date:   2017-03-04 15:34:14 -0500
 ---
 
 
