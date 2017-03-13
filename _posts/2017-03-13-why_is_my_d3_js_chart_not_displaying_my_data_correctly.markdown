@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Why is my d3.js chart not displaying my data correctly?"
-date:   2017-03-13 04:07:44 +0000
+date:   2017-03-13 00:07:44 -0400
 ---
 
 After wokring on web applications for some time. I recently had the time to venture into data visualization. I've always wanted to explore this realm given my background in Electronic Design and Multimedia. As a designer we learn to display information that is beautiful, minimal and easy to understand but not interactive by a user. That part is left up to the developers. Now that I am a developer I am able to turn my designs into an interactive playground that is both dynamic and interactive. Something that could not be done only with design. 
@@ -30,8 +30,8 @@ In the DOM the points are plotted from left to right for the x-axis and top to b
 So to draw a straight line you would write x = 0 y = 0 for the starting point, and for the ending point x = 100 y = -100. 
 Easy enough right?
 
-I had to plot a total of 100 on the y-axis and 7days on the x-axis
-It turns out whenever you are ploitting the lines on the y-axis you with positive values you must  minus the values from 100. This is the only way  the values to show up as positive values. Because remember the y-axis goes down, so it would plot from 0 to -100. 
+I had to plot a total of 0 - 100 on the y-axis and 1 - 7 (days) on the x-axis
+It turns out whenever you are plotting the lines on the y-axis you with positive values you must minus the positve values from 100. This is the only way  the values will show up as positive values. Because remember the y-axis goes down, so by default it will plot the points downwalrd from 0 to -100 and not updwards from 0 to 100. 
 
 So if the values were 10, 20, 44, 55, I would have to minus 100 from 10 = 90, 100 - 20 = 80, 100 - 44 = 56, 100 - 55 = 45 to get teh correct values so that the values do not appear inverted. So 10 would plot on the grpah 90 pixels down which is equal to 10 pixels upward. Get it? That's positive 10 on the chart!
 
