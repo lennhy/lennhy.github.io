@@ -4,6 +4,7 @@ title:  "Why is my d3.js chart not displaying my data correctly?"
 date:   2017-03-13 00:07:44 -0400
 ---
 
+FYI: This is for folks who are already familar with d3.js but have encounterred the fustrating problem with there data plotting incorrectly. 
 After wokring on web applications for some time. I recently had the time to venture into data visualization. I've always wanted to explore this realm given my background in Electronic Design and Multimedia. As a designer we learn to display information that is beautiful, minimal and easy to understand but not interactive by a user. That part is left up to the developers. Now that I am a developer I am able to turn my designs into an interactive playground that is both dynamic and interactive. Something that could not be done only with design. 
 
 My project was to make an interactive weather chart where the user could hover over dots that marked every change in temperature throughout the 7 day week startinng with "today". There are several apis and frameworks one can use such as : HTML5 svg and canvas for instance. Given it's popularity amongst tech companys and developers I decided to go with d3.js.
