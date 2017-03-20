@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "How to Deploy a Sinatra Rack Based Application to Heroku  + GitHub sync"
-date:   2017-03-20 00:31:40 +0000
+date:   2017-03-19 20:31:41 -0400
 ---
 
 
