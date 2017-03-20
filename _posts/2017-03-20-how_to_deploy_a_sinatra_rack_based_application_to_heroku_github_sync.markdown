@@ -22,7 +22,7 @@ To make it simple we will focus on the free tier heroku dyno types.
 
 First of all if you were having dificulties before reading this don't get discouraged, I spent some time pulling out my hair tyring to set up the environment to deploy the application. It took me longer because their was not a lot of tutorials available for this specific case (Sinatra+Heroku+SQlite). Also the heroku, postgres and sinatra docs were not tailoired for something this specific. So I used all theses resources including other student blogs to solve the issues I faced but not without some challenge. 
 
-***SINATRA SECTION***
+**SINATRA SECTION**
 
 **Setting up your Sinatra Environment** 
 
@@ -87,6 +87,8 @@ production:
 
 This will tell the application what environments to use for each database.
 
+**HEROKU SECTION**
+
 **Create a Procfile**
 You need this file so that Heroku knows how to startup the application when it is launched. Sinatra is a Rack based applcation so type the code below.
 
@@ -95,10 +97,8 @@ web: bundle exec puma -p $PORT -e $RACK_ENV -t 0:5
 
 ```
 
-***HEROKU SECTION***
 
-**
-Step 1**
+**Step 1**
 In your terminal type 
 
 ```
