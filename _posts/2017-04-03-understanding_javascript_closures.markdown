@@ -5,7 +5,7 @@ date:   2017-04-02 21:44:31 -0400
 ---
 
 
-Closures are the toughest part of javascripot that I have a hard time understanding probably because there are so many different examples and ways to explain it. 
+Since I was first introduced to the concept of closures I've had a hard time understanding how it works and why anyone would want to use them - probably because there are so many different examples and ways to make it. 
 
 In JavaScript to understand closures you first have to understand scope. 
 When a function is created a scope is made within that function. And when a nested function is created inside another funciton a new scope is created within that function.  But with closure  not only does the nested function have access to variables defined in it's own scope but it now has access to any variable defined inside the parent function's scope as well. 
