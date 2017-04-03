@@ -44,6 +44,6 @@ add();
 
 The counter variable is accessible only inside the add function so other functions can't access the counter. But because the anonymous function is nested inside this function it has acccess to the counter variable it will change the counter by incrementing it everytime add() is called. 
 
-To be honest I still get a little confused by this but you have to remember the part where the variable is only changed by the inner function and can't be changed by other functions outside of the parent scope. Thus the variable is now a private varaible that can only be access from within the parent function. 
+To be honest I still get a little confused by this but you have to remember the part where the variable is only changed by the inner function and can't be changed or accessed by other functions outside of the parent scope. Thus the variable is now a private variable that can only be access from within the parent function. 
 
 
