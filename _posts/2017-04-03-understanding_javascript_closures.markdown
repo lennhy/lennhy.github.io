@@ -1,11 +1,15 @@
 ---
 layout: post
 title:  "Understanding Javascript Closures"
-date:   2017-04-03 01:44:30 +0000
+date:   2017-04-02 21:44:31 -0400
 ---
 
 
+Closures are the toughest part of javascripot that I have a hard time understanding probably because there are so many different examples and ways to explain it. 
+
 In JavaScript to understand closures you first have to understand scope. 
+When a function is created a scope is made within that function. And when a nested function is created inside another funciton a new scope is created within that function.  But with closure  not only does the nested function have access to variables defined in it's own scope but it now has access to any variable defined inside the parent function's scope as well. 
+
 Morzilla Network gives a breif summary:
 
 *Closures are functions that refer to independent (free) variables (variables that are used locally, but defined in an enclosing scope). In other words, these functions 'remember' the environment in which they were created.*
